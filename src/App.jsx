@@ -5,6 +5,7 @@ import { Routes, Route, Link } from "react-router-dom";
 
 import Item from './components/ItemList/Item';
 import Producto from './components/Producto/Producto';
+import GetProducto from './components/Producto/GetProducto';
 const lightTheme = {
   background: 'white',
   text: 'black',
@@ -27,7 +28,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Item />} />
-          <Route path="/producto/:id" element={<Producto />} />
+          <Route path="/producto/:id" element={<GetProducto />} />
         </Routes>
       </div>
     </div >

@@ -11,16 +11,20 @@ export default function PintarUser({ producto }) {
         <>
 
             <div className="card hijo" >
-                <Link to={`/producto/${producto.id}`}><button className='btn btn-primary'>Mas Info</button></Link>
+
                 <img src={producto.image} className="card-img-top" alt="Imagen Producto" />
                 <div className="card-body">
                     <h5 className="card-title">{producto.title}</h5>
                     <p className="card-text"> Precio $ {producto.price}   <br />  Seleccion: {count}</p>
                     <br />
                     <div className='botones'>
-                        <button className='btn btn-primary' onClick={() => sumarItem(true)}>+</button>
-                        <button className='btn btn-primary' onClick={() => sumarItem(false)}>-</button>
-                        <button className='btn btn-primary'>Agregar  <BsCartFill /></button>
+                        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Launch demo modal
+                        </button>
+                        <Link to={`/producto/${producto.id}`}><button className='btn btn-primary btn-sm'>Mas Info</button></Link>
+                        <button className='btn btn-primary btn-sm' onClick={() => sumarItem(true)}>+</button>
+                        <button className='btn btn-primary btn-sm' onClick={() => sumarItem(false)}>-</button>
+                        <button className='btn btn-primary btn-sm'>Agregar  <BsCartFill /></button>
 
                     </div>
 

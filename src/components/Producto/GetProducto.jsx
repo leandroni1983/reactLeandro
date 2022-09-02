@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import Producto from './Producto';
+import { useParams } from 'react-router-dom';
 
-const Getproducto = () => {
-    const [prod, setprod] = useState([])
+const GetProducto = () => {
+
+    const [producto, setproducto] = useState([])
     const { id } = useParams();
 
     useEffect(() => {
@@ -12,17 +13,16 @@ const Getproducto = () => {
 
         })
 
-
         getdata
             .then(res => res.json())
-            .then(json => setprod(json))
+            .then(json => setproducto(json))
             .catch((err) => console.error(err))
 
     }, [])
 
     return (
-        <Producto producto={prod} />
+        <Producto producto={producto} />
     );
 }
 
-export default Getproducto;
+export default GetProducto;

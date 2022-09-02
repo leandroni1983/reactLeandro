@@ -16,6 +16,7 @@ const Item = () => {
             .then(res => res.json())
             .then(json => setproducto(json))
             .catch((err) => console.error(err))
+
     }, [])
 
     return (
